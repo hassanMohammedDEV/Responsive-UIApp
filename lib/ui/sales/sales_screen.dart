@@ -11,15 +11,19 @@ class SalesScreen extends StatelessWidget {
         title: Text(screenTitle),
 
       ),
-      body: Column(
-        children: [
-          ElevatedButton(onPressed: ()=>{}, child:const Text('add product'),),
-          Expanded(child: ListView.builder(
-            itemCount: 10,
-              itemBuilder: (context,index){
-            return const SalesCard();
-          }))
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            ElevatedButton(onPressed: ()=>{}, child:const Text('add product'),),
+            const SizedBox(height: 10),
+            Expanded(child: ListView.builder(
+              itemCount: 10,
+                itemBuilder: (context,index){
+              return const SalesCard();
+            }))
+          ],
+        ),
       ),
     );
   }

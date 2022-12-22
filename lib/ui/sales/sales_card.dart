@@ -20,10 +20,10 @@ class SalesCard extends StatelessWidget {
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
-                        children: const [
-                          Text('21 #'),
-                          SizedBox(width: 5),
-                          Text('زبادي الهناء')
+                        children:  [
+                          const Text('21 #'),
+                          const SizedBox(width: 5),
+                          Text('زبادي الهناء',style: TextStyle(color: Theme.of(context).primaryColor),)
                         ],
                       ),
                     ],
@@ -39,7 +39,7 @@ class SalesCard extends StatelessWidget {
                         color: Colors.blue.withOpacity(0.3),
                         borderRadius: BorderRadius.circular(7),
                       ),
-                      child: const Text('كرتون'),
+                      child: const Text('كرتون',style: TextStyle(color: Colors.blue)),
                     ),
                   ],
                 ),),
@@ -70,8 +70,10 @@ class SalesCard extends StatelessWidget {
                 ),),
                  Expanded(child: Column(
                    crossAxisAlignment: CrossAxisAlignment.end,
-                  children: const [
-                    InkWell(child: Icon(Icons.keyboard_arrow_up),),
+                  children: [
+                    Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(7),color: Colors.blue.withOpacity(0.3)), child:  const InkWell(child: Icon(Icons.keyboard_arrow_up),),),
                   ],
                 ),)
               ],
