@@ -36,14 +36,15 @@ class TwittesCrd extends StatelessWidget {
                     Expanded(
                       child: Row(
                         children: const [
-                          Expanded(child: Text('Hassan Mohammed',style: TextStyle(fontWeight: FontWeight.bold),)),
+                          Expanded(child: Text('Hassan Mohammed',
+                            style: TextStyle(fontWeight: FontWeight.bold),)),
                           SizedBox(width: 2,),
-                          Text('@7assan',style: TextStyle(color: Colors.grey),),
-                          Text('13 س .',style: TextStyle(color: Colors.grey),)
+                          Text('7assan@',style: TextStyle(color: Colors.grey),),
+                          SizedBox(width: 2,),
+                          Text('.13 س',style: TextStyle(color: Colors.grey),)
                         ],
                       ),
                     ),
-
                   ],
                 ),
                 Row(
