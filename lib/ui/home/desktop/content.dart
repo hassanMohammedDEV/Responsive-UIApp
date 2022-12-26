@@ -313,7 +313,11 @@ class Content extends StatelessWidget {
               children: [
                 recentfile(Icons.camera_enhance_rounded,const Color.fromRGBO(102, 99, 245, 1),'IMG_10000000','PNG file','5 MB'),
                const SizedBox(height: 8,),
-                recentfile(Icons.videocam_sharp,const Color.fromRGBO(102, 99, 245, 1),'IMG_10000000','PNG file','5 MB'),
+                recentfile(Icons.videocam_sharp,const Color.fromRGBO(224, 108, 159, 1),'StartUp pitch','AVI file','105 MB'),
+                const SizedBox(height: 8,),
+                recentfile(Icons.videocam_sharp,const Color.fromRGBO(30, 111, 213, 1),'Freestyle beat','MB3 file','21 MB'),
+                const SizedBox(height: 8,),
+                recentfile(Icons.videocam_sharp,const Color.fromRGBO(0, 160, 182, 1),'Work proposal','MB3 file','21 MB'),
               ],
             ),
           ],
@@ -333,26 +337,43 @@ class Content extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 9,vertical: 5),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Container(
-              height: 30,
-              width: 30,
-              decoration:  BoxDecoration(
-                color: iconBackgroundColor,
-                borderRadius: const BorderRadius.all(Radius.circular(5))
-              ),
-              child:  Center(
-                child: Icon(icon,color: Colors.white,size: 13,),
+            Expanded(
+              flex: 2,
+              child: Row(
+                children: [
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration:  BoxDecoration(
+                        color: iconBackgroundColor,
+                        borderRadius: const BorderRadius.all(Radius.circular(5))
+                    ),
+                    child:  Center(
+                      child: Icon(icon,color: Colors.white,size: 13,),
+                    ),
+                  ),
+                  const SizedBox(width: 8,),
+                  Text(name,style: const TextStyle(fontSize: 10)),
+                ],
               ),
             ),
-            const SizedBox(width: 8,),
-            Text(name,style: const TextStyle(fontSize: 10)),
-            const SizedBox(width: 10),
-            Text(size),
-            const SizedBox(width: 10),
-            const Icon(Icons.share),
-            const SizedBox(width: 10),
-            const Icon(Icons.more_horiz),
+            Expanded(child: Text(fileType,style: const TextStyle(fontSize: 10))),
+            Expanded(child: Text(size,style: const TextStyle(fontSize: 10))),
+            const Expanded(
+              child: Icon(Icons.share,size: 14,color: Color.fromRGBO(
+                  38, 111, 213, 0.6),),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: const [
+                  Icon(Icons.more_horiz_outlined,size: 14,color: Color.fromRGBO(
+                      38, 111, 213, 0.6),),
+                ],
+              ),
+            ),
           ],
         ),
       ),
