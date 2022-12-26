@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_app/ui/home/desktop/home.dart';
 
 import 'ui/sales/sales_screen.dart';
 import 'ui/twitter/main_screen.dart';
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  const MainScreen(title:'Flutter Demo Home Page'),
+      home:  const Home(title:'Flutter Demo Home Page'),
     );
   }
 }
