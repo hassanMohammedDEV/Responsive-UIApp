@@ -311,13 +311,13 @@ class Content extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                recentfile(Icons.camera_enhance_rounded,const Color.fromRGBO(102, 99, 245, 1),'IMG_10000000','PNG file','5 MB'),
+                recentfileCard(Icons.camera_enhance_rounded,const Color.fromRGBO(102, 99, 245, 1),'IMG_10000000','PNG file','5 MB'),
                const SizedBox(height: 8,),
-                recentfile(Icons.videocam_sharp,const Color.fromRGBO(224, 108, 159, 1),'StartUp pitch','AVI file','105 MB'),
+                recentfileCard(Icons.videocam_sharp,const Color.fromRGBO(224, 108, 159, 1),'StartUp pitch','AVI file','105 MB'),
                 const SizedBox(height: 8,),
-                recentfile(Icons.videocam_sharp,const Color.fromRGBO(30, 111, 213, 1),'Freestyle beat','MB3 file','21 MB'),
+                recentfileCard(Icons.mic,const Color.fromRGBO(30, 111, 213, 1),'Freestyle beat','MB3 file','21 MB'),
                 const SizedBox(height: 8,),
-                recentfile(Icons.videocam_sharp,const Color.fromRGBO(0, 160, 182, 1),'Work proposal','MB3 file','21 MB'),
+                recentfileCard(Icons.copy,const Color.fromRGBO(0, 160, 182, 1),'Work proposal','MB3 file','21 MB'),
               ],
             ),
           ],
@@ -326,7 +326,7 @@ class Content extends StatelessWidget {
     );
   }
 
-  Widget recentfile(IconData icon,Color iconBackgroundColor,String name, String fileType,String size){
+  Widget recentfileCard(IconData icon,Color iconBackgroundColor,String name, String fileType,String size){
     return Container(
       height: 45,
       width: 570,

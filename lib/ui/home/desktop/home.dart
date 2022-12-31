@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_app/ui/home/desktop/content.dart';
 import 'package:ui_app/ui/home/desktop/nav_drawer.dart';
+import 'package:ui_app/ui/home/desktop/sidebar.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key,required this.title}) : super(key: key);
@@ -24,7 +25,7 @@ class Home extends StatelessWidget {
           //TODO options
           Expanded(
               flex: 2,
-              child: Placeholder()
+              child: Sidebar()
           ),
         ],
       ),
