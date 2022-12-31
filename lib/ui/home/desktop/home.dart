@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/ui/home/desktop/content.dart';
-import 'package:ui_app/ui/home/desktop/nav_drawer.dart';
-import 'package:ui_app/ui/home/desktop/sidebar.dart';
+import 'package:ui_app/ui/home/desktop/content/content.dart';
+import 'package:ui_app/ui/home/desktop/navDrawer/nav_drawer.dart';
+import 'package:ui_app/ui/home/desktop/sidebar/sidebar.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key,required this.title}) : super(key: key);

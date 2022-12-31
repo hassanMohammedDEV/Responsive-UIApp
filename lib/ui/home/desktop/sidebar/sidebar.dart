@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_app/ui/home/desktop/sidebar/widgets/add_more_card.dart';
+import 'package:ui_app/ui/home/desktop/sidebar/widgets/shared_folders_card.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);
@@ -83,16 +85,16 @@ class Sidebar extends StatelessWidget {
                       padding: const EdgeInsets.all(12),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text('Your shared folders',style: TextStyle(fontWeight: FontWeight.bold),),
-                          const SizedBox(height: 12),
-                          sidebarListCard('Project team',const Color.fromRGBO(189, 229, 235, 1),Icons.groups_rounded),
-                          const SizedBox(height: 10),
-                          sidebarListCard('Management staff',const Color.fromRGBO(215, 215, 255, 1),Icons.manage_accounts),
-                          const SizedBox(height: 10),
-                          sidebarListCard('Project reports',const Color.fromRGBO(247, 218, 231, 1),Icons.print),
-                          const SizedBox(height: 10),
-                          addMoreCard(),
+                        children: const [
+                          Text('Your shared folders',style: TextStyle(fontWeight: FontWeight.bold),),
+                          SizedBox(height: 12),
+                          SharedFoldersCard(text: 'Project team',backgroundColor: Color.fromRGBO(189, 229, 235, 1),icon:Icons.groups_rounded ,),
+                          SizedBox(height: 10),
+                          SharedFoldersCard(text: 'Management staff',backgroundColor: Color.fromRGBO(215, 215, 255, 1),icon:Icons.manage_accounts,),
+                           SizedBox(height: 10),
+                          SharedFoldersCard(text: 'Project reports',backgroundColor: Color.fromRGBO(247, 218, 231, 1),icon:Icons.print,),
+                          SizedBox(height: 10),
+                          AddMoreCard(),
                         ],
                       ),
                     ),
@@ -105,50 +107,5 @@ class Sidebar extends StatelessWidget {
       ),
     );
   }
-  
-  Widget sidebarListCard(String text,Color backgroundColor, IconData icon){
-    return Expanded(
-      child: Container(
-        decoration:  BoxDecoration(
-          borderRadius: const BorderRadius.all(Radius.circular(6)),
-          color: backgroundColor
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(text),
-              CircleAvatar(
-                maxRadius: 15,
-                backgroundColor: Colors.white,
-                child: Icon(icon,size: 15),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 
-  Widget addMoreCard(){
-    return Container(
-      decoration: BoxDecoration(
-        color: const Color.fromRGBO(235, 242, 252, 1),
-        borderRadius: const BorderRadius.all(Radius.circular(6)),
-        border: Border.all(color: Colors.grey.withOpacity(0.2)),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Icon(Icons.add,size: 5,color: Colors.blueAccent),
-            SizedBox(width: 3),
-            Text('Add more',style: TextStyle(color: Colors.blueAccent,fontSize: 10),)
-          ],
-        ),
-      ),
-    );
-  }
 }

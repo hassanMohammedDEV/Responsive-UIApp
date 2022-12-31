@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_app/ui/home/desktop/content/widgets/recent_file_card.dart';
 
 class Content extends StatelessWidget {
   const Content({Key? key}) : super(key: key);
@@ -310,14 +311,14 @@ class Content extends StatelessWidget {
             const SizedBox(height: 10),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                recentfileCard(Icons.camera_enhance_rounded,const Color.fromRGBO(102, 99, 245, 1),'IMG_10000000','PNG file','5 MB'),
-               const SizedBox(height: 8,),
-                recentfileCard(Icons.videocam_sharp,const Color.fromRGBO(224, 108, 159, 1),'StartUp pitch','AVI file','105 MB'),
-                const SizedBox(height: 8,),
-                recentfileCard(Icons.mic,const Color.fromRGBO(30, 111, 213, 1),'Freestyle beat','MB3 file','21 MB'),
-                const SizedBox(height: 8,),
-                recentfileCard(Icons.copy,const Color.fromRGBO(0, 160, 182, 1),'Work proposal','MB3 file','21 MB'),
+              children: const [
+                RecentfileCard(icon: Icons.camera_enhance_rounded,iconBackgroundColor: Color.fromRGBO(102, 99, 245, 1),name: 'IMG_10000000',fileType: 'PNG file',size: '105 MB'),
+               SizedBox(height: 8,),
+                RecentfileCard(icon: Icons.videocam_sharp,iconBackgroundColor: Color.fromRGBO(224, 108, 159, 1),name: 'StartUp pitch',fileType: 'AVI file',size: '108 MB'),
+                SizedBox(height: 8,),
+                RecentfileCard(icon: Icons.mic,iconBackgroundColor: Color.fromRGBO(30, 111, 213, 1),name: 'Freestyle beat',fileType: 'MB3 file',size: '21 MB'),
+                SizedBox(height: 8,),
+                RecentfileCard(icon: Icons.copy,iconBackgroundColor: Color.fromRGBO(0, 160, 182, 1),name: 'Work proposal',fileType: 'audio file',size: '33 MB'),
               ],
             ),
           ],
@@ -326,57 +327,4 @@ class Content extends StatelessWidget {
     );
   }
 
-  Widget recentfileCard(IconData icon,Color iconBackgroundColor,String name, String fileType,String size){
-    return Container(
-      height: 45,
-      width: 570,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(8),)
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 9,vertical: 5),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Expanded(
-              flex: 2,
-              child: Row(
-                children: [
-                  Container(
-                    height: 30,
-                    width: 30,
-                    decoration:  BoxDecoration(
-                        color: iconBackgroundColor,
-                        borderRadius: const BorderRadius.all(Radius.circular(5))
-                    ),
-                    child:  Center(
-                      child: Icon(icon,color: Colors.white,size: 13,),
-                    ),
-                  ),
-                  const SizedBox(width: 8,),
-                  Text(name,style: const TextStyle(fontSize: 10)),
-                ],
-              ),
-            ),
-            Expanded(child: Text(fileType,style: const TextStyle(fontSize: 10))),
-            Expanded(child: Text(size,style: const TextStyle(fontSize: 10))),
-            const Expanded(
-              child: Icon(Icons.share,size: 14,color: Color.fromRGBO(
-                  38, 111, 213, 0.6),),
-            ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: const [
-                  Icon(Icons.more_horiz_outlined,size: 14,color: Color.fromRGBO(
-                      38, 111, 213, 0.6),),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 }
