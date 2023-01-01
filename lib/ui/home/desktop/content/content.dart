@@ -56,7 +56,6 @@ class Content extends StatelessWidget {
                 ],
               ),
             ),
-            //TODO Files Part
             const SizedBox(height: 20),
             const Text('Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 15),
@@ -87,7 +86,6 @@ class Content extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 25),
-            //TODO Recent Files Part
             const Text('Recent Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             Expanded(
