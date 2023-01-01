@@ -29,7 +29,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.person_add_alt_rounded,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('My cloud',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('My cloud',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                       const SizedBox(height: 15,),
@@ -37,7 +37,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.groups,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('Shared files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('Shared files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                       const SizedBox(height: 15,),
@@ -45,7 +45,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.star,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('Shared files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('Shared files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                       const SizedBox(height: 15,),
@@ -53,7 +53,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.cloud_upload,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('upload files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('upload files',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                     ],
@@ -72,7 +72,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.settings,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('Setting',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('Setting',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                       const SizedBox(
@@ -82,7 +82,7 @@ class NavDrawer extends StatelessWidget {
                         children:const [
                           Icon(Icons.logout,color: Colors.white,),
                           SizedBox(width: 8),
-                          Text('Log out',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),)
+                          Expanded(child: Text('Log out',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))
                         ],
                       ),
                       const SizedBox(height: 15,),

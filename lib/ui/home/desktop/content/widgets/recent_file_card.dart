@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 class RecentfileCard extends StatelessWidget {
-  const RecentfileCard({Key? key, required this.icon, required this.iconBackgroundColor, required this.name, required this.fileType, required this.size}) : super(key: key);
+  const RecentfileCard({Key? key, required this.icon, required this.iconBackgroundColor, required this.name, required this.fileType, required this.size, required this.height, required this.width}) : super(key: key);
   final IconData icon;
   final Color iconBackgroundColor;
   final String name, fileType,size;
-
+  final double height,width;
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 45,
-      width: 570,
+      height: height,
+      width: width,
       decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(8),)
@@ -24,14 +24,14 @@ class RecentfileCard extends StatelessWidget {
               child: Row(
                 children: [
                   Container(
-                    height: 30,
-                    width: 30,
+                    height: height*0.5,
+                    width: width*0.03,
                     decoration:  BoxDecoration(
                         color: iconBackgroundColor,
                         borderRadius: const BorderRadius.all(Radius.circular(5))
                     ),
                     child:  Center(
-                      child: Icon(icon,color: Colors.white,size: 13,),
+                      child: Icon(icon,color: Colors.white,size: height*0.3,),
                     ),
                   ),
                   const SizedBox(width: 8,),

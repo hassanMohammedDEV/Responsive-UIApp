@@ -17,7 +17,7 @@ class AddMoreCard extends StatelessWidget {
           children: const [
             Icon(Icons.add,size: 5,color: Colors.blueAccent),
             SizedBox(width: 3),
-            Text('Add more',style: TextStyle(color: Colors.blueAccent,fontSize: 10),)
+            Expanded(child: Text('Add more',style: TextStyle(color: Colors.blueAccent,fontSize: 10),))
           ],
         ),
       ),

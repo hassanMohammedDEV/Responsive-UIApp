@@ -7,6 +7,8 @@ class Sidebar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+
     return  Container(
       color: const Color.fromRGBO(235, 242, 252, 1),
       child: Padding(
@@ -17,7 +19,7 @@ class Sidebar extends StatelessWidget {
             borderRadius: BorderRadius.all(Radius.circular(14))
           ),
           child: Padding(
-            padding: const EdgeInsets.all(17),
+            padding: EdgeInsets.all(height*0.02),
             child: Column(
               children: [
                 Expanded(
@@ -32,10 +34,10 @@ class Sidebar extends StatelessWidget {
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
-                          children: const [
-                            Icon(Icons.save_alt,size: 50,color: Color.fromRGBO(6, 54, 122, 1),),
-                            SizedBox(height: 20),
-                            Text('Add new files',style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(6, 54, 122, 1))),
+                          children: [
+                            Expanded(child: Icon(Icons.save_alt,size: height*0.12,color: const Color.fromRGBO(6, 54, 122, 1),)),
+                            SizedBox(height: height*0.1),
+                            const Expanded(child: Text('Add new files',style: TextStyle(fontWeight: FontWeight.bold,color: Color.fromRGBO(6, 54, 122, 1)))),
                           ],
                         ),
                       ],
@@ -56,8 +58,8 @@ class Sidebar extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
-                            Text('Your storage',style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('25% left',style:TextStyle(fontWeight: FontWeight.bold,color: Colors.blue)),
+                            Expanded(child: Text('Your storage',style: TextStyle(fontWeight: FontWeight.bold))),
+                            Expanded(child: Text('25% left',style:TextStyle(fontWeight: FontWeight.bold,color: Colors.blue))),
                           ],
                         ),
                         const SizedBox(height: 10),
@@ -83,19 +85,21 @@ class Sidebar extends StatelessWidget {
                   ),
                     child: Padding(
                       padding: const EdgeInsets.all(12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Your shared folders',style: TextStyle(fontWeight: FontWeight.bold),),
-                          SizedBox(height: 12),
-                          SharedFoldersCard(text: 'Project team',backgroundColor: Color.fromRGBO(189, 229, 235, 1),icon:Icons.groups_rounded ,),
-                          SizedBox(height: 10),
-                          SharedFoldersCard(text: 'Management staff',backgroundColor: Color.fromRGBO(215, 215, 255, 1),icon:Icons.manage_accounts,),
-                           SizedBox(height: 10),
-                          SharedFoldersCard(text: 'Project reports',backgroundColor: Color.fromRGBO(247, 218, 231, 1),icon:Icons.print,),
-                          SizedBox(height: 10),
-                          AddMoreCard(),
-                        ],
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text('Your shared folders',style: TextStyle(fontWeight: FontWeight.bold),),
+                            const SizedBox(height: 12),
+                            SharedFoldersCard(text: 'Project team',backgroundColor: const Color.fromRGBO(189, 229, 235, 1),icon:Icons.groups_rounded ,height: height *0.06),
+                            const SizedBox(height: 10),
+                            SharedFoldersCard(text: 'Management staff',backgroundColor: const Color.fromRGBO(215, 215, 255, 1),icon:Icons.manage_accounts,height: height *0.06),
+                             const SizedBox(height: 10),
+                            SharedFoldersCard(text: 'Project reports',backgroundColor: const Color.fromRGBO(247, 218, 231, 1),icon:Icons.print,height: height *0.06),
+                            const SizedBox(height: 10),
+                            const AddMoreCard(),
+                          ],
+                        ),
                       ),
                     ),
                 ),

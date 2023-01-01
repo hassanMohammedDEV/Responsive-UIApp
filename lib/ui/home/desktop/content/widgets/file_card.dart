@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 class FileCard extends StatelessWidget {
-  const FileCard({Key? key, required this.icon, required this.iconColor, required this.title, required this.text}) : super(key: key);
+  const FileCard({Key? key, required this.icon, required this.iconColor, required this.title, required this.text, required this.height, required this.width}) : super(key: key);
   final IconData icon;
   final Color iconColor;
   final String title,text;
+  final double height,width;
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 80,
+      width: width,
+      height: height,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10)
@@ -18,13 +20,14 @@ class FileCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
-            Icon(icon,color: iconColor,size: 15),
+            Expanded(child: Icon(icon,color: iconColor,size: 15)),
             const SizedBox(height: 5),
-            Text(title,style: const TextStyle(fontWeight: FontWeight.bold,fontSize: 11,color: Color.fromRGBO(6, 54, 122, 1))),
-            Text(text,style:  const TextStyle(fontSize: 11,color:  Color.fromRGBO(6, 54, 122, 1))),
-            const SizedBox(height: 15),
+            Expanded(child: Text(title,style:  TextStyle(fontWeight: FontWeight.bold,fontSize: height*0.15,color: const Color.fromRGBO(6, 54, 122, 1)))),
+            Expanded(child: Text(text,style:   TextStyle(fontSize: height*0.13,color:  const Color.fromRGBO(6, 54, 122, 1)))),
+             SizedBox(height: height*0.13),
             Center(
               child: Container(
+                margin: const EdgeInsets.only(bottom: 4),
                 height: 1.2,
                 width: 50,
                 decoration: const BoxDecoration(
