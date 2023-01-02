@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_app/model/category/category_model.dart';
 import 'package:ui_app/ui/home/desktop/content/widgets/category_card.dart';
 import 'package:ui_app/ui/home/desktop/content/widgets/file_card.dart';
 import 'package:ui_app/ui/home/desktop/content/widgets/recent_file_card.dart';
@@ -35,60 +36,70 @@ class Content extends StatelessWidget {
             const SizedBox(height: 20),
             const Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
             const SizedBox(height: 15),
-            SingleChildScrollView(
+            Expanded(
+              flex: 1,
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                scrollDirection: Axis.horizontal,
+                itemCount: CategoryModel.getCategory().length,
+                  itemBuilder: (context,index)
+                      {
+                        double cardHeight = height*0.11;
+                        double cardWidth = width*0.08;
+                        CategoryModel category=CategoryModel.getCategory()[index];
 
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                   CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: const Color.fromRGBO(0, 160, 182, 1),title: 'Pictures',text: '480 files',circleIcon: Icons.camera_enhance_rounded,towIcon: true,icon: Icons.star,secondIconColor: Colors.yellowAccent),
-                  const SizedBox(width: 8),
-                   CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: const Color.fromRGBO(102, 99, 254, 1),title: 'Audio',text: '190 files',circleIcon: Icons.file_copy_rounded),
-                  const SizedBox(width: 8),
-                  CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: const Color.fromRGBO(224, 108, 159, 1),title: 'Videos',text: '30 files',circleIcon: Icons.videocam_sharp),
-                  const SizedBox(width: 8,),
-                  CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: const Color.fromRGBO(38, 111, 213, 1),title: 'Audio',text: '80 files',circleIcon: Icons.mic),
-                  const SizedBox(width: 8,),
-                  CategoryCard(height: height*0.11,width: width*0.08,backgroundColor:  Colors.deepPurple,title: 'PDF',text: '250 files',circleIcon: Icons.bookmark_add_outlined),
-                  const SizedBox(width: 8,),
-                  CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: Colors.amber,title: 'Games',text: '25 files',circleIcon: Icons.games_sharp),
-                  const SizedBox(width: 8,),
-                  CategoryCard(height: height*0.11,width: width*0.08,backgroundColor: Colors.blueGrey,title: 'Others',text: '25 files',circleIcon: Icons.cake),
-                ],
+                        return CategoryCard(
+                            circleIcon: category.circleIcon,
+                            title: category.title,
+                            text: category.text,
+                            backgroundColor: category.backgroundColor,
+                            width: cardWidth,
+                            height: cardHeight,
+                            towIcon: category.towIcon,
+                            secondIcon: Icons.star,
+                            secondIconColor: Colors.yellowAccent,
+                        );
+                      }
               ),
             ),
+
             const SizedBox(height: 20),
             const Text('Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 15),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  FileCard(height: height*0.10,width: width*0.07,title: 'Work', text: '820 Files',icon: Icons.storage,iconColor: const Color.fromRGBO(102, 99, 254, 1)),
-                  const SizedBox(width: 8),
-                  FileCard(height: height*0.10,width: width*0.07,title: 'Personal', text: '115 Files',icon: Icons.person,iconColor: const Color.fromRGBO(0, 160, 182, 1)),
-                  const SizedBox(width: 8),
-                  FileCard(height: height*0.10,width: width*0.07,title: 'School', text: '65 Files',icon: Icons.school,iconColor: const Color.fromRGBO(224, 108, 159, 1)),
-                  const SizedBox(width: 8),
-                  FileCard(height: height*0.10,width: width*0.07,title: 'Archive', text: '22 Files',icon: Icons.archive,iconColor: const Color.fromRGBO(38, 111, 213, 1)),
-                  const SizedBox(width: 8),
-                  Container(
-                    width: width*0.07,
-                    height: height*0.10,
-                    decoration: BoxDecoration(
-                        color: const Color.fromRGBO(245, 249, 253, 1),
-                        borderRadius: BorderRadius.circular(10)
+            Expanded(
+              flex: 1,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    FileCard(height: height*0.10,width: width*0.07,title: 'Work', text: '820 Files',icon: Icons.storage,iconColor: const Color.fromRGBO(102, 99, 254, 1)),
+                    const SizedBox(width: 8),
+                    FileCard(height: height*0.10,width: width*0.07,title: 'Personal', text: '115 Files',icon: Icons.person,iconColor: const Color.fromRGBO(0, 160, 182, 1)),
+                    const SizedBox(width: 8),
+                    FileCard(height: height*0.10,width: width*0.07,title: 'School', text: '65 Files',icon: Icons.school,iconColor: const Color.fromRGBO(224, 108, 159, 1)),
+                    const SizedBox(width: 8),
+                    FileCard(height: height*0.10,width: width*0.07,title: 'Archive', text: '22 Files',icon: Icons.archive,iconColor: const Color.fromRGBO(38, 111, 213, 1)),
+                    const SizedBox(width: 8),
+                    Container(
+                      width: width*0.07,
+                      height: height*0.10,
+                      decoration: BoxDecoration(
+                          color: const Color.fromRGBO(245, 249, 253, 1),
+                          borderRadius: BorderRadius.circular(10)
+                      ),
+                      child: const Center(
+                        child: Icon(Icons.add,color: Color.fromRGBO(38, 111, 213, 1),size: 18),
+                      ),
                     ),
-                    child: const Center(
-                      child: Icon(Icons.add,color: Color.fromRGBO(38, 111, 213, 1),size: 18),
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             const SizedBox(height: 25),
             const Text('Recent Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             Expanded(
+              flex: 4,
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
