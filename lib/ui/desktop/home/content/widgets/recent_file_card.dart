@@ -8,6 +8,7 @@ class RecentfileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(top: 5),
       height: height,
       width: width,
       decoration: const BoxDecoration(
@@ -25,13 +26,13 @@ class RecentfileCard extends StatelessWidget {
                 children: [
                   Container(
                     height: height*0.5,
-                    width: width*0.03,
+                    width: width*0.2,
                     decoration:  BoxDecoration(
                         color: iconBackgroundColor,
                         borderRadius: const BorderRadius.all(Radius.circular(5))
                     ),
                     child:  Center(
-                      child: Icon(icon,color: Colors.white,size: height*0.3,),
+                      child: Icon(icon,color: Colors.white,size: height*0.20,),
                     ),
                   ),
                   const SizedBox(width: 8,),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/ui/home/desktop/home.dart';
-
-import 'ui/sales/sales_screen.dart';
-import 'ui/twitter/main_screen.dart';
+import 'package:ui_app/ui/desktop/home/desktop_home.dart';
+import 'package:ui_app/ui/mobile/mobile_home.dart';
+import 'package:ui_app/ui/responsive_utils.dart';
+import 'package:ui_app/ui/tablet/home/tablet_home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  const Home(title:'Flutter Demo Home Page'),
+      home:  const ResponsiveUtils(mobileScreen: MobileHome(),tabletScreen: TabletHome(),webScreen: DesktopHome()),
     );
   }
 }

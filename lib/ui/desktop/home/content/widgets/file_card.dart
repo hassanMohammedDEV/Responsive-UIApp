@@ -9,6 +9,7 @@ class FileCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(left: 5),
       width: width,
       height: height,
       decoration: BoxDecoration(

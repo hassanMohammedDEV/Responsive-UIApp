@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/ui/home/desktop/sidebar/widgets/add_more_card.dart';
-import 'package:ui_app/ui/home/desktop/sidebar/widgets/shared_folders_card.dart';
+
+import 'widgets/add_more_card.dart';
+import 'widgets/shared_folders_card.dart';
 
 class Sidebar extends StatelessWidget {
   const Sidebar({Key? key}) : super(key: key);

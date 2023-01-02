@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ui_app/ui/home/desktop/content/content.dart';
-import 'package:ui_app/ui/home/desktop/navDrawer/nav_drawer.dart';
-import 'package:ui_app/ui/home/desktop/sidebar/sidebar.dart';
+import 'package:ui_app/ui/desktop/home/sidebar/sidebar.dart';
+import 'package:ui_app/ui/tablet/home/content/content.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key,required this.title}) : super(key: key);
-  final String title;
+class TabletHome extends StatelessWidget {
+  const TabletHome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,13 +11,9 @@ class Home extends StatelessWidget {
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: const [
-          Expanded(
-            flex: 1,
-              child: NavDrawer(),
-          ),
           //TODO content
           Expanded(
-            flex: 4,
+              flex: 4,
               child: Content()
           ),
           //TODO options
