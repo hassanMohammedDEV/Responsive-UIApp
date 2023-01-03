@@ -42,7 +42,6 @@ class Content extends StatelessWidget {
             Expanded(
               flex: 1,
               child: ListView.builder(
-                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                   scrollDirection: Axis.horizontal,
                   itemCount: CategoryModel.getCategory().length,
                   itemBuilder: (context,index)
