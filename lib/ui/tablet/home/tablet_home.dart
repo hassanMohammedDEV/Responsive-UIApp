@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_app/ui/desktop/home/sidebar/sidebar.dart';
+import 'package:ui_app/ui/mobile/nav_drawer/drawer.dart';
 import 'package:ui_app/ui/tablet/home/content/content.dart';
 
 class TabletHome extends StatelessWidget {
@@ -8,6 +9,10 @@ class TabletHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      appBar: AppBar(
+        title: const Text('home'),
+      ),
+      drawer: const MobDrawer(),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: const [

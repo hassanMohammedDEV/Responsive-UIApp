@@ -38,7 +38,7 @@ class Content extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text('Categories',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15),),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
             Expanded(
               flex: 1,
               child: ListView.builder(
@@ -66,8 +66,9 @@ class Content extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text('Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
-            const SizedBox(height: 15),
+            const SizedBox(height: 10),
            Expanded(
+             flex: 1,
              child: ListView.builder(
                  physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
                  scrollDirection: Axis.horizontal,
@@ -90,11 +91,11 @@ class Content extends StatelessWidget {
 
              }),
            ),
-            const SizedBox(height: 25),
+            const SizedBox(height: 20),
             const Text('Recent Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             Expanded(
-              flex: 4,
+              flex: 3,
               child: ListView.builder(
                 itemCount: RecentFileModel.getRecentFiles().length,
                   physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
