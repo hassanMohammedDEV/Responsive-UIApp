@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_app/model/category/category_model.dart';
 import 'package:ui_app/model/file/file_model.dart';
+import 'package:ui_app/model/recent_file/recent_file_model.dart';
 
 import 'widgets/category_card.dart';
 import 'widgets/file_card.dart';
@@ -94,21 +95,26 @@ class Content extends StatelessWidget {
             const Text('Recent Files', style: TextStyle(color: Color.fromRGBO(6, 54, 122, 1),fontWeight: FontWeight.bold)),
             const SizedBox(height: 10),
             Expanded(
-              flex: 4,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    RecentfileCard(icon: Icons.camera_enhance_rounded,iconBackgroundColor: const Color.fromRGBO(102, 99, 245, 1),name: 'IMG_10000000',fileType: 'PNG file',size: '105 MB',height: height *0.06,width: width),
-                   const SizedBox(height: 8,),
-                     RecentfileCard(icon: Icons.videocam_sharp,iconBackgroundColor: const Color.fromRGBO(224, 108, 159, 1),name: 'StartUp pitch',fileType: 'AVI file',size: '108 MB',height: height *0.05,width: width),
-                    const SizedBox(height: 8,),
-                    RecentfileCard(icon: Icons.mic,iconBackgroundColor: const Color.fromRGBO(30, 111, 213, 1),name: 'Freestyle beat',fileType: 'MB3 file',size: '21 MB',height: height *0.05,width: width),
-                    const SizedBox(height: 8,),
-                    RecentfileCard(icon: Icons.copy,iconBackgroundColor: const Color.fromRGBO(0, 160, 182, 1),name: 'Work proposal',fileType: 'audio file',size: '33 MB',height: height *0.05,width: width),
-                  ],
-                ),
-              ),
+                flex: 4,
+                child: ListView.builder(
+                    itemCount: RecentFileModel.getRecentFiles().length,
+                    physics: const BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context,index){
+                      double cardHeight = height*0.06;
+                      double cardWidth = width;
+                      RecentFileModel item = RecentFileModel.getRecentFiles()[index];
+
+                      return RecentfileCard(
+                        name: item.name,
+                        fileType: item.fileType,
+                        size: item.size,
+                        height: cardHeight,
+                        width: cardWidth,
+                        icon: item.icon,
+                        iconBackgroundColor: item.iconColor,
+                      );
+                    })
             ),
           ],
         ),
