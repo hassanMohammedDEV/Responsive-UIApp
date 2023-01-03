@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:ui_app/model/category/category_model.dart';
 import 'package:ui_app/model/file/file_model.dart';
 import 'package:ui_app/model/recent_file/recent_file_model.dart';
+import 'package:ui_app/ui/desktop/home/content/widgets/category_card.dart';
 import 'package:ui_app/ui/desktop/home/content/widgets/file_card.dart';
 import 'package:ui_app/ui/desktop/home/content/widgets/recent_file_card.dart';
-
-import 'widgets/category_card.dart';
+//import 'widgets/category_card.dart';
 
 class Content extends StatelessWidget {
   const Content({Key? key}) : super(key: key);
@@ -102,7 +102,7 @@ class Content extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context,index){
                     double cardHeight = height*0.09;
-                    double cardWidth = width*0.3;
+                    double cardWidth = width*4;
                     RecentFileModel item = RecentFileModel.getRecentFiles()[index];
 
                     return RecentfileCard(

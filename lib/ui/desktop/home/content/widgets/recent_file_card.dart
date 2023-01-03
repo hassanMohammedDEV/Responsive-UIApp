@@ -26,7 +26,7 @@ class RecentfileCard extends StatelessWidget {
                 children: [
                   Container(
                     height: height*0.5,
-                    width: width*0.2,
+                    width: width*0.02,
                     decoration:  BoxDecoration(
                         color: iconBackgroundColor,
                         borderRadius: const BorderRadius.all(Radius.circular(5))
@@ -36,7 +36,7 @@ class RecentfileCard extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8,),
-                  Text(name,style: const TextStyle(fontSize: 10)),
+                  Expanded(child: Text(name,style: const TextStyle(fontSize: 10))),
                 ],
               ),
             ),
