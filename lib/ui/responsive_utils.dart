@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ResponsiveUtils extends StatelessWidget {
-  const ResponsiveUtils({Key? key, required this.webScreen, required this.tabletScreen, required this.mobileScreen}) : super(key: key);
+  const ResponsiveUtils({
+    Key? key, required this.webScreen, required this.tabletScreen,
+    required this.mobileScreen}) : super(key: key);
 
   static const double _mobileWidthLimit = 650.0;
   static const double _tabletWidthLimit = 1100.0;

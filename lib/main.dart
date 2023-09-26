@@ -29,7 +29,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home:  const ResponsiveUtils(mobileScreen: MobileHome(),tabletScreen: TabletHome(),webScreen: DesktopHome()),
+      home:  const ResponsiveUtils(mobileScreen: MobileHome(),
+          tabletScreen: TabletHome(),webScreen: DesktopHome()),
     );
   }
 }
